@@ -1,0 +1,35 @@
+{
+  "name": "nclsslr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "nclsslr",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@chakra-ui/gatsby-plugin": "^2.0.2",
+    "@chakra-ui/icons": "^1.1.1",
+    "@chakra-ui/react": "^1.7.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/style": "^0.8.0",
+    "@emotion/styled": "^11.3.0",
+    "@fontsource/sora": "^4.5.0",
+    "@fontsource/space-mono": "^4.5.0",
+    "@react-icons/all-files": "^4.1.0",
+    "framer-motion": "^5.3.0",
+    "gatsby": "^4.1.1",
+    "gatsby-plugin-image": "^2.1.0",
+    "gatsby-plugin-sharp": "^4.1.1",
+    "gatsby-source-filesystem": "^4.1.0",
+    "gatsby-transformer-sharp": "^4.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
