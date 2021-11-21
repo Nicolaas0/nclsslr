@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Box, Text } from '@chakra-ui/react'
+import { fontStyle } from '../../theme'
 
 const Header = () => {
     return (
         <Box align='center'>
-            <Text fontFamily='SpaceMono' fontSize='1.5rem'>hi, my name is Nicolaas✨</Text>
-            <Text fontFamily='SpaceMono' fontSize='1.5rem'>i am an frontend developer💻</Text>
+            <Text {...fontStyle}>hi, my name is Nicolaas✨</Text>
+            <Text {...fontStyle}>i am an frontend developer💻</Text>
         </Box>
     )
 }
