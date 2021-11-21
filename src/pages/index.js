@@ -1,6 +1,7 @@
 import * as React from "react";
 import Navbar from './components/navbar'
 import Header from './components/header'
+import Project from './components/project'
 // import Switch from './components/switch'
 import Snt from './components/snt'
 import {
@@ -18,7 +19,8 @@ const IndexPage = () => {
       <VStack width='100vw' height='100vh' bgColor='dark' spacing='10'>
         <Navbar w='100vw' />
         <Header />
-        <Snt />
+        <Project />
+        {/* <Snt /> */}
         {/* <Switch /> */}
       </VStack>
     </ChakraProvider >
