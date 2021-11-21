@@ -14,4 +14,15 @@ const theme = extendTheme({
     useSystemColorMode: false,
 })
 
+export const fontStyle = {
+    fontFamily: 'SpaceMono',
+    fontSize: '1.5rem',
+    mx: '4'
+}
+
+export const imgStyle = {
+    w: '40%',
+    h: '40%'
+}
+
 export default extendTheme(theme);
