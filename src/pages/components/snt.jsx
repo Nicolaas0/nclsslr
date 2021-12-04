@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Text, UnorderedList, ListItem, Image, Badge } from '@chakra-ui/react'
+import { Box, Text, UnorderedList, ListItem, Image, Badge, Tooltip } from '@chakra-ui/react'
 import { fontStyle } from '../../theme';
 import reactlogo from '../../assests/icons/reactlogo.svg'
 import firebaselogo from '../../assests/icons/firebaselogo.svg'
@@ -10,29 +10,36 @@ import figmalogo from '../../assests/icons/figmalogo.svg'
 import javalogo from '../../assests/icons/javalogo.svg'
 
 const Snt = () => {
+
     const bStatus = {
         SL: {
             colorScheme: 'green',
-            caption: 'still learning'
+            caption: 'still learning',
+            label: 'Always learning and improving at this skills'
         },
         BSC: {
             colorScheme: 'blue',
-            caption: 'basic 100%'
+            caption: 'basic 100%',
+            label: 'Master all the basic in this skill'
         },
         MN: {
             colorScheme: 'red',
-            caption: 'MAIN SKILL'
+            caption: 'MAIN SKILL',
+            label: 'This skills i\'m very confident of'
         },
         NXT: {
-            caption: 'nextJS'
+            caption: 'nextJS',
+            label: 'I can work with nextJS framework'
         },
         GBY: {
             colorScheme: 'purple',
-            caption: 'Gatsby'
+            caption: 'Gatsby',
+            label: 'I can work with Gatsby framework'
         },
         TL: {
             colorScheme: 'yellow',
-            caption: 'Tools'
+            caption: 'Tools',
+            label: 'I can use this tool'
         }
     }
 
@@ -70,11 +77,6 @@ const Snt = () => {
     },
     ]
 
-    const fontStyle = {
-        fontFamily: 'SpaceMono',
-        fontSize: '1.5rem',
-        mx: '4'
-    }
     const iconStyle = {
         w: '2rem',
         h: '2rem',
@@ -91,7 +93,8 @@ const Snt = () => {
         mx: '2',
         variant: 'subtle',
         borderRadius: '5',
-        p: '1'
+        p: '1',
+        cursor: 'pointer'
     }
 
     return (
@@ -105,10 +108,9 @@ const Snt = () => {
                             <Text {...fontStyle}>{c.skills}</Text>
                             {
                                 c.badge.map(b => (
-                                    <Badge colorScheme={b.colorScheme} {...badgeStyle}>{b.caption}</Badge>
+                                    <Tooltip hasArrow label={b.label}><Badge colorScheme={b.colorScheme} {...badgeStyle}>{b.caption}</Badge></Tooltip>
                                 ))
                             }
-                            {/* <Badge colorScheme={c.badge.colorScheme} {...badgeStyle}>{c.badge.caption}</Badge> */}
                         </ListItem>
                     </UnorderedList>
                 ))

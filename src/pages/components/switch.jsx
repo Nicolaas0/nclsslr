@@ -14,10 +14,8 @@ const Switch = () => {
         p: '5px'
     }
     return (
-        <Box cursor='pointer' position='fixed' top='20' left='10'>
-            {colorMode === 'light' ?
-                <MoonIcon onClick={toggleColorMode} {...icStyle} /> :
-                <Icon as={FaSun} onClick={toggleColorMode} {...icStyle} />}
+        <Box display='flex' flexDirection='column' cursor='pointer' position='fixed' top='20' left='10'>
+
         </Box>
     )
 }

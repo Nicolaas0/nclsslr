@@ -4,11 +4,14 @@ const theme = extendTheme({
     fonts: {
         Sora: "Sora",
         SpaceMono: "Space Mono",
+        RobotoMono: "Roboto Mono",
     },
     colors: {
-        dark: '#171717',
-        theme: '#FF0044',
+        dark: '#080708',
         white: '#FFF'
+    },
+    shadows: {
+        outline: 'dark'
     },
     initialColorMode: "light",
     useSystemColorMode: false,
