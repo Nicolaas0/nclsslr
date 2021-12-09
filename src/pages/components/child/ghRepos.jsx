@@ -1,17 +1,23 @@
 import * as React from 'react'
+import axios from 'axios'
 import {
     SimpleGrid,
     Text,
-    Flex,
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionIcon,
-    AccordionPanel,
-    Link
+    Link,
+    Box
 } from '@chakra-ui/react'
 
-const GHRepos = ({ data }) => {
+const GHRepos = () => {
+
+    const [data, setData] = React.useState([])
+
+    React.useEffect(() => {
+        axios.get('https://api.github.com/users/nicolaas0/repos').then((res) => {
+            const v = res.data
+            console.log(res.data)
+            setData(v)
+        })
+    }, [])
 
     const headingStyle = {
         fontFamily: 'SpaceMono',
@@ -48,23 +54,13 @@ const GHRepos = ({ data }) => {
         <>
             <SimpleGrid columns={3} spacing={10} w='100%'>
                 {
-                    data.map((d) => (
-                        <Flex flexDirection="column" alignItems="center" w='25vw'>
-                            <Accordion {...accorStyle} allowMultiple>
-                                <AccordionItem>
-                                    <AccordionButton w='100%'>
-                                        <Text {...headingStyle} w='100%'>{d.name}</Text>
-                                        <AccordionIcon />
-                                    </AccordionButton>
-                                    <AccordionPanel pb={4} w='100%' alignItems='center' display="flex" flexDirection='column'>
-                                        <Text {...bodyStyle}>{d.description}</Text>
-                                        <Link {...linkStyle} href={d.html_url}><Text>🔗: {d.html_url}</Text></Link>
-                                        <Text {...dateStyle} align>{d.created_at}</Text>
-                                    </AccordionPanel>
-                                </AccordionItem>
-                            </Accordion>
-                        </Flex>
-                    ))
+                    data ? data.map((d) => (
+                        <Box h='auto' maxW='20vw' mx='4' textAlign='center'>
+                            <Text {...headingStyle}>{d.name}</Text>
+                            <Text {...bodyStyle}>{d.description}</Text>
+                            <Link {...linkStyle}>{d.html_url}</Link>
+                        </Box>
+                    )) : null
                 }
             </SimpleGrid>
         </>

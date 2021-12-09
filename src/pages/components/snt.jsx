@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Box, Text, UnorderedList, ListItem, Image, Badge, Tooltip } from '@chakra-ui/react'
-import { fontStyle } from '../../theme';
 import reactlogo from '../../assests/icons/reactlogo.svg'
 import firebaselogo from '../../assests/icons/firebaselogo.svg'
 import nodelogo from '../../assests/icons/nodelogo.svg'
@@ -78,9 +77,15 @@ const Snt = () => {
     ]
 
     const iconStyle = {
-        w: '2rem',
-        h: '2rem',
-        mr: '10'
+        w: {
+            xl: '2rem',
+            sm: '1.5rem'
+        },
+        h: {
+            xl: '2rem',
+            sm: '1.5rem'
+        },
+        mr: '10',
     }
     const listStyle = {
         listStyleType: 'none',
@@ -88,18 +93,46 @@ const Snt = () => {
         flexDirection: 'row'
     }
     const badgeStyle = {
-        h: '50%',
+        fontSize: {
+            sm: '7px',
+            xl: '12px'
+        },
         alignSelf: 'center',
-        mx: '2',
+        mx: {
+            sm: '1',
+            lg: '2'
+        },
         variant: 'subtle',
         borderRadius: '5',
         p: '1',
         cursor: 'pointer'
     }
 
+    const fontStyle = {
+        fontFamily: 'SpaceMono',
+        fontSize: {
+            sm: '1rem',
+            xl: '1.5rem',
+        },
+        mx: '4',
+        display: {
+            sm: 'none',
+            xl: 'block'
+        }
+    }
+
+    const headingStyle = {
+        fontFamily: 'SpaceMono',
+        fontSize: {
+            sm: '1rem',
+            xl: '1.5rem',
+        },
+        mx: '4',
+    }
+
     return (
-        <Box>
-            <Text {...fontStyle}>my skills and tools:</Text>
+        <Box h={{ sm: 'auto' }} m={{ sm: '0' }}>
+            <Text {...headingStyle}>my skills and tools:</Text>
             {
                 content.map((c) => (
                     <UnorderedList my='1rem'>
@@ -108,7 +141,7 @@ const Snt = () => {
                             <Text {...fontStyle}>{c.skills}</Text>
                             {
                                 c.badge.map(b => (
-                                    <Tooltip hasArrow label={b.label}><Badge colorScheme={b.colorScheme} {...badgeStyle}>{b.caption}</Badge></Tooltip>
+                                    <Tooltip isDisabled={{ sm: true, xl: false }} hasArrow label={b.label}><Badge colorScheme={b.colorScheme} {...badgeStyle}>{b.caption}</Badge></Tooltip>
                                 ))
                             }
                         </ListItem>

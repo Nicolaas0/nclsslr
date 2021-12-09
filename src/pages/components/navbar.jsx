@@ -1,10 +1,15 @@
 import React from "react";
-import { Text, Box, Switch, Icon } from '@chakra-ui/react'
+import {
+    Text, Box, Switch, Icon, Menu, Tooltip, Button
+} from '@chakra-ui/react'
+import { useColorMode } from "@chakra-ui/color-mode";
 import { HiHome } from '@react-icons/all-files/hi/HiHome'
 import { RiToolsFill } from '@react-icons/all-files/ri/RiToolsFill'
 import { FaLaptopCode } from '@react-icons/all-files/fa/FaLaptopCode'
 
 const Navbar = ({ setShow }) => {
+
+    const { colorMode, toggleColorMode } = useColorMode()
 
     const navStyle = {
         display: 'flex',
@@ -19,43 +24,78 @@ const Navbar = ({ setShow }) => {
 
     const headingStyle = {
         fontWeight: 'bold',
-        fontSize: '20',
+        fontSize: {
+            sm: '15',
+            lg: '15',
+            xl: '20'
+        },
         fontFamily: 'Sora',
-        color: 'white',
         p: '0',
-        mr: '50px'
+        mx: {
+            sm: '2'
+        },
     }
 
     const fontStyle = {
         fontWeight: 'bold',
-        fontSize: '15',
+        fontSize: {
+            sm: '0',
+            lg: '10',
+            xl: '15'
+
+        },
         fontFamily: 'SpaceMono',
+        display: {
+            sm: 'none',
+            lg: 'inline'
+        }
     }
 
     const iconStyle = {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        border: '2px transparent solid',
+        w: '20px',
+        h: '20px',
+        paddingBottom: '4px'
+    }
+
+    const _hover = {
+        _hover: {
+            borderBottom: '2px solid white',
+            transition: '1s',
+        }
     }
 
     return (
         <Box {...navStyle}>
-            <Box w='200px'>
+            <Box w={{ sm: '105px', lg: '200px' }}>
                 <Text {...headingStyle}>nclsslr</Text>
             </Box>
             <Box display='flex' flexDirection='row' justifyContent='space-evenly' alignItems='center' w='200px'>
-                <Icon {...iconStyle} as={HiHome} onClick={() => {
+                <Icon {..._hover}{...iconStyle} as={HiHome} onClick={() => {
                     setShow(1)
                 }} />
-                <Icon {...iconStyle} as={RiToolsFill} onClick={() => {
-                    setShow(2)
-                }} />
-                <Icon {...iconStyle} as={FaLaptopCode} onClick={() => {
+                <Icon {..._hover}{...iconStyle} as={FaLaptopCode} onClick={() => {
                     setShow(3)
                 }} />
+                <Icon {..._hover}{...iconStyle} as={RiToolsFill} onClick={() => {
+                    setShow(2)
+                }} />
             </Box>
-            <Box w='200px'>
-                <Text {...fontStyle} display='inline'>Dark Mode?</Text>
-                <Box display='inline'>🌚</Box>
-                <Switch display='inline' />
+            <Box w={{ sm: '105px', lg: '200px' }} onClick={toggleColorMode} cursor='pointer'>
+
+                {
+                    colorMode === 'dark' ?
+                        <>
+                            <Text {...fontStyle} >Light Mode?</Text>
+                            <Box ml={{ sm: '4' }} display={{ sm: 'inline-block' }} boxSize>☀️</Box>
+                        </>
+                        :
+                        <>
+                            <Text {...fontStyle} display='inline'>Dark Mode?</Text>
+                            <Box mx='2' display='inline'>🌚</Box>
+                        </>
+                }
             </Box>
         </Box>
     )

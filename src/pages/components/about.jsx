@@ -13,7 +13,6 @@ import {
     Link,
 } from "@chakra-ui/react"
 import { fontStyle } from '../../theme'
-import ModBody from './child/modBody'
 
 const About = () => {
 
@@ -29,7 +28,6 @@ const About = () => {
                     <ModalHeader><Text fontFamily='Sora'></Text></ModalHeader>
 
                     <ModalBody>
-                        <ModBody />
                     </ModalBody>
 
                     <ModalFooter>

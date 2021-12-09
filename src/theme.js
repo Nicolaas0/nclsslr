@@ -1,4 +1,20 @@
 import { extendTheme } from "@chakra-ui/react"
+import { mode, createBreakpoints } from '@chakra-ui/theme-tools'
+
+const styles = {
+    global: props => ({
+        body: {
+            bg: mode('white', 'dark.ori')(props),
+        },
+    }),
+}
+
+const breakpoints = createBreakpoints({
+    sm: '320px',
+    md: '481px',
+    lg: '768px',
+    xl: '1025px',
+})
 
 const theme = extendTheme({
     fonts: {
@@ -7,20 +23,28 @@ const theme = extendTheme({
         RobotoMono: "Roboto Mono",
     },
     colors: {
-        dark: '#080708',
-        white: '#FFF'
+        dark: {
+            ori: '#080708',
+            lighten: '#544954'
+        },
+        white: '#FFF',
     },
     shadows: {
         outline: 'dark'
     },
     initialColorMode: "light",
     useSystemColorMode: false,
+    styles,
+    breakpoints,
 })
 
 export const fontStyle = {
     fontFamily: 'SpaceMono',
-    fontSize: '1.5rem',
-    mx: '4'
+    fontSize: {
+        sm: '1rem',
+        xl: '1.5rem',
+    },
+    mx: '4',
 }
 
 export const imgStyle = {

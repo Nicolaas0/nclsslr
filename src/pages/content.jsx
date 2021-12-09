@@ -1,5 +1,6 @@
 import { Box } from '@chakra-ui/layout'
 import * as React from 'react'
+import GHRepos from './components/child/ghRepos'
 import Header from './components/header'
 import Project from './components/project'
 import Snt from './components/snt'
