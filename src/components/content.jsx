@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Header from './components/header'
-import Project from './components/project'
-import Snt from './components/snt'
+import Header from './header'
+import Project from './project'
+import Snt from './snt'
 
 const Content = ({ useShow }) => {
     let component

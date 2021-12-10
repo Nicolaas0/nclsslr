@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Text } from '@chakra-ui/react'
-import { fontStyle } from '../../theme'
+import { fontStyle } from '../theme'
 
 const Header = () => {
     return (

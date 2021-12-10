@@ -1,23 +1,21 @@
 import * as React from "react";
-import Navbar from './components/navbar'
-import Content from './content'
+import Navbar from '../components/navbar'
+import Content from '../components/content'
 import {
   ChakraProvider,
   VStack,
   Box,
 } from "@chakra-ui/react"
-import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode";
 import theme from "../theme";
 import '@fontsource/sora'
 import '@fontsource/space-mono'
 import '@fontsource/roboto-mono'
-import Footer from "./components/footer";
+import Footer from "../components/footer";
 
 // markup
 const IndexPage = () => {
 
   const [useShow, setShow] = React.useState(1)
-  const { colorMode } = useColorMode()
 
   return (
     <ChakraProvider theme={theme}>

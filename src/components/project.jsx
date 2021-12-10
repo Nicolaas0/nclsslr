@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Box, Text, Flex, Tag, Link, Image, } from '@chakra-ui/react'
 import Carousel from './child/carousel'
-import home from '../../images/home.png'
-import main from '../../images/main.png'
-import signup from '../../images/signup.png'
-import signin from '../../images/signin.png'
+import home from '../images/home.png'
+import main from '../images/main.png'
+import signup from '../images/signup.png'
+import signin from '../images/signin.png'
 
 const Project = () => {
 

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Box, Text, UnorderedList, ListItem, Image, Badge, Tooltip } from '@chakra-ui/react'
-import reactlogo from '../../assests/icons/reactlogo.svg'
-import firebaselogo from '../../assests/icons/firebaselogo.svg'
-import nodelogo from '../../assests/icons/nodelogo.svg'
-import exprlogo from '../../assests/icons/expresslogo.png'
-import andrlogo from '../../assests/icons/androidlogo.svg'
-import figmalogo from '../../assests/icons/figmalogo.svg'
-import javalogo from '../../assests/icons/javalogo.svg'
+import reactlogo from '../assests/icons/reactlogo.svg'
+import firebaselogo from '../assests/icons/firebaselogo.svg'
+import nodelogo from '../assests/icons/nodelogo.svg'
+import exprlogo from '../assests/icons/expresslogo.png'
+import andrlogo from '../assests/icons/androidlogo.svg'
+import figmalogo from '../assests/icons/figmalogo.svg'
+import javalogo from '../assests/icons/javalogo.svg'
 
 const Snt = () => {
 
