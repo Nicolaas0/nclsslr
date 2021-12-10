@@ -43,11 +43,11 @@ const Carousel = ({ source }) => {
         <Box w={{ xl: '30vw', sm: '60vw', lg: '40vw' }}>
             <Slider {...settings}>
                 {
-                    source.map((s, i) => (
+                    Source ? source.map((s, i) => (
                         <Box key={i}>
                             <Image src={s} />
                         </Box>
-                    ))
+                    )) : null
                 }
             </Slider>
         </Box>
