@@ -4,13 +4,16 @@ import Project from './components/project'
 import Snt from './components/snt'
 
 const Content = ({ useShow }) => {
+    let component
     if (useShow === 1) {
-        return <Header />
+        component = <Header />
     } if (useShow === 2) {
-        return <Project />
+        component = <Project />
     } if (useShow === 3) {
-        return <Snt />
+        component = <Snt />
     }
+
+    return component
 }
 
 export default Content

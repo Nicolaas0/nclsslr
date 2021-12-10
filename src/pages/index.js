@@ -1,10 +1,5 @@
 import * as React from "react";
 import Navbar from './components/navbar'
-// import Header from './components/header'
-// import Project from './components/project'
-// import Switch from './components/switch'
-// import Snt from './components/snt'
-// import About from './components/about'
 import Content from './content'
 import {
   ChakraProvider,
