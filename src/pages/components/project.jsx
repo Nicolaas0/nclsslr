@@ -5,7 +5,6 @@ import home from '../../images/home.png'
 import main from '../../images/main.png'
 import signup from '../../images/signup.png'
 import signin from '../../images/signin.png'
-import githublogo from '../../assests/icons/githublogo.svg'
 
 const Project = () => {
 
@@ -92,10 +91,6 @@ const Project = () => {
                     </Flex>
                 </Flex>
             ))}
-            {/* <Box display='flex' flexDirection='row' justifyContent='center' alignItems='center' my='4'>
-                <Text mr='2' {...fontStyle}>Find more on my</Text>
-                <Link isExternal href='https://github.com/Nicolaas0'><Image src={githublogo} cursor='pointer' /></Link>
-            </Box> */}
         </Box>
     )
 }
