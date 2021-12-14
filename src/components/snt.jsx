@@ -10,6 +10,15 @@ import javalogo from '../assests/icons/javalogo.svg'
 
 const Snt = () => {
 
+    const containerStyle = {
+        h: {
+            sm: 'auto',
+        },
+        m: '0',
+        position: 'relative',
+        top: '70px'
+    }
+
     const bStatus = {
         SL: {
             colorScheme: 'green',
@@ -131,7 +140,7 @@ const Snt = () => {
     }
 
     return (
-        <Box h={{ sm: 'auto' }} m={{ sm: '0' }}>
+        <Box {...containerStyle}>
             <Text {...headingStyle}>my skills and tools:</Text>
             {
                 content.map((c) => (
@@ -141,7 +150,7 @@ const Snt = () => {
                             <Text {...fontStyle}>{c.skills}</Text>
                             {
                                 c.badge.map(b => (
-                                    <Tooltip isDisabled={{ sm: true, xl: false }} hasArrow label={b.label}><Badge colorScheme={b.colorScheme} {...badgeStyle}>{b.caption}</Badge></Tooltip>
+                                    <Tooltip hasArrow label={b.label}><Badge colorScheme={b.colorScheme} {...badgeStyle}>{b.caption}</Badge></Tooltip>
                                 ))
                             }
                         </ListItem>

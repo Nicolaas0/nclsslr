@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Text, Box, Switch, Icon, Menu, Tooltip, Button
 } from '@chakra-ui/react'
@@ -56,14 +56,21 @@ const Navbar = ({ setShow }) => {
         border: '2px transparent solid',
         w: '20px',
         h: '20px',
-        paddingBottom: '4px'
+        paddingBottom: '4px',
     }
 
-    const _hover = {
+    const event = {
         _hover: {
-            borderBottom: '2px solid white',
+            borderBottom: '1px solid white',
             transition: '1s',
-        }
+        },
+    }
+
+    const emoteStyle = {
+        position: 'relative',
+        left: { sm: '10', xl: '0' },
+        mx: { sm: '0', xl: '2' },
+        display: 'inline',
     }
 
     return (
@@ -72,13 +79,13 @@ const Navbar = ({ setShow }) => {
                 <Text {...headingStyle}>nclsslr</Text>
             </Box>
             <Box display='flex' flexDirection='row' justifyContent='space-evenly' alignItems='center' w='200px'>
-                <Icon {..._hover}{...iconStyle} as={HiHome} onClick={() => {
+                <Icon {...event}{...iconStyle} as={HiHome} _ onClick={() => {
                     setShow(1)
                 }} />
-                <Icon {..._hover}{...iconStyle} as={FaLaptopCode} onClick={() => {
+                <Icon {...event}{...iconStyle} as={FaLaptopCode} onClick={() => {
                     setShow(3)
                 }} />
-                <Icon {..._hover}{...iconStyle} as={RiToolsFill} onClick={() => {
+                <Icon {...event}{...iconStyle} as={RiToolsFill} onClick={() => {
                     setShow(2)
                 }} />
             </Box>
@@ -88,12 +95,12 @@ const Navbar = ({ setShow }) => {
                     colorMode === 'dark' ?
                         <>
                             <Text {...fontStyle} >Light Mode?</Text>
-                            <Box ml={{ sm: '4' }} display={{ sm: 'inline-block' }} boxSize>☀️</Box>
+                            <Box {...emoteStyle}>☀️</Box>
                         </>
                         :
                         <>
                             <Text {...fontStyle} display='inline'>Dark Mode?</Text>
-                            <Box mx='2' display='inline'>🌚</Box>
+                            <Box {...emoteStyle}>🌚</Box>
                         </>
                 }
             </Box>

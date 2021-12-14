@@ -21,7 +21,7 @@ const IndexPage = () => {
     <ChakraProvider theme={theme}>
       <Box minHeight='100vh' maxHeight='100%' maxW='100%'>
         <Navbar setShow={setShow} />
-        <Box minHeight='80vh' maxHeight='100%' display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
+        <Box minHeight='100%' maxHeight='100%' display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
           <Content useShow={useShow} />
         </Box>
         <Footer />

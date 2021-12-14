@@ -29,6 +29,14 @@ const Carousel = ({ source }) => {
         );
     }
 
+    const containerStyle = {
+        w: {
+            xl: '33vw',
+            sm: '60vw',
+            lg: '40vw'
+        },
+    }
+
     const settings = {
         infinite: true,
         speed: 500,
@@ -40,7 +48,7 @@ const Carousel = ({ source }) => {
         prevArrow: <SamplePrevArrow />
     };
     return (
-        <Box w={{ xl: '30vw', sm: '60vw', lg: '40vw' }}>
+        <Box {...containerStyle}>
             <Slider {...settings}>
                 {
                     source ? source.map((s, i) => (

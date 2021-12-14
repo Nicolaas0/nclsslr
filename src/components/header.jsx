@@ -4,9 +4,9 @@ import { fontStyle } from '../theme'
 
 const Header = () => {
     return (
-        <Box align='center'>
+        <Box align='center' position='relative' top='200px'>
             <Text {...fontStyle}>hi, my name is Nicolaas✨</Text>
-            <Text {...fontStyle}>i am an frontend developer💻</Text>
+            <Text {...fontStyle}>i am a frontend developer💻</Text>
         </Box>
     )
 }

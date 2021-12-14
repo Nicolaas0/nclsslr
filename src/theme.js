@@ -25,7 +25,7 @@ const theme = extendTheme({
     colors: {
         dark: {
             ori: '#080708',
-            lighten: '#544954'
+            lighten: '#544954',
         },
         white: '#FFF',
     },
