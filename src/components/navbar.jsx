@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Text, Box, Switch, Icon, Menu, Tooltip, Button
 } from '@chakra-ui/react'
@@ -7,9 +7,10 @@ import { HiHome } from '@react-icons/all-files/hi/HiHome'
 import { RiToolsFill } from '@react-icons/all-files/ri/RiToolsFill'
 import { FaLaptopCode } from '@react-icons/all-files/fa/FaLaptopCode'
 
-const Navbar = ({ setShow }) => {
+const Navbar = ({ setShow, useShow }) => {
 
     const { colorMode, toggleColorMode } = useColorMode()
+
 
     const navStyle = {
         display: 'flex',
@@ -51,18 +52,31 @@ const Navbar = ({ setShow }) => {
         }
     }
 
-    const iconStyle = {
+    const gIcon = {
+        borderRadius: '5px',
+        transition: '0.1s',
+        borderColor: 'light.gray',
         cursor: 'pointer',
-        border: '2px transparent solid',
-        w: '20px',
-        h: '20px',
-        paddingBottom: '4px',
+        w: '23px',
+        h: '23px',
+        p: '4px',
     }
 
-    const event = {
-        _hover: {
-            borderBottom: '1px solid white',
-            transition: '1s',
+    const iconStyle = {
+        home: {
+            ...gIcon,
+            border: useShow === 1 ? '2px solid' : null,
+            color: useShow === 1 ? 'light.gray' : 'dark.gray',
+        },
+        skill: {
+            ...gIcon,
+            border: useShow === 2 ? '2px solid' : null,
+            color: useShow === 2 ? 'light.gray' : 'dark.gray',
+        },
+        project: {
+            ...gIcon,
+            border: useShow === 3 ? '2px solid' : null,
+            color: useShow === 3 ? 'light.gray' : 'dark.gray',
         },
     }
 
@@ -79,14 +93,14 @@ const Navbar = ({ setShow }) => {
                 <Text {...headingStyle}>nclsslr</Text>
             </Box>
             <Box display='flex' flexDirection='row' justifyContent='space-evenly' alignItems='center' w='200px'>
-                <Icon {...event}{...iconStyle} as={HiHome} _ onClick={() => {
+                <Icon {...iconStyle.home} as={HiHome} onClick={() => {
                     setShow(1)
                 }} />
-                <Icon {...event}{...iconStyle} as={FaLaptopCode} onClick={() => {
-                    setShow(3)
-                }} />
-                <Icon {...event}{...iconStyle} as={RiToolsFill} onClick={() => {
+                <Icon {...iconStyle.skill} as={RiToolsFill} onClick={() => {
                     setShow(2)
+                }} />
+                <Icon {...iconStyle.project} as={FaLaptopCode} onClick={() => {
+                    setShow(3)
                 }} />
             </Box>
             <Box w={{ sm: '105px', lg: '200px' }} onClick={toggleColorMode} cursor='pointer'>
@@ -104,7 +118,7 @@ const Navbar = ({ setShow }) => {
                         </>
                 }
             </Box>
-        </Box>
+        </Box >
     )
 }
 

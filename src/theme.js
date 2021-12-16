@@ -26,8 +26,12 @@ const theme = extendTheme({
         dark: {
             ori: '#080708',
             lighten: '#544954',
+            gray: mode('#5B5B5B', '#A4A4A4')
         },
         white: '#FFF',
+        light: {
+            gray: mode('#242424', '#DBDBDB')
+        }
     },
     shadows: {
         outline: 'dark'
