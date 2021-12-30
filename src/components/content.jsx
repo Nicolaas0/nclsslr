@@ -8,9 +8,9 @@ const Content = ({ useShow }) => {
     if (useShow === 1) {
         component = <Header />
     } if (useShow === 2) {
-        component = <Project />
-    } if (useShow === 3) {
         component = <Snt />
+    } if (useShow === 3) {
+        component = <Project />
     }
 
     return component
