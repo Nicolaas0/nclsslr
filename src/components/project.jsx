@@ -63,7 +63,7 @@ const Project = () => {
             img: [home, signin, signup, main],
             decs: 'Chazyy is group chat app. Chazyy created with React for frontend and Firebase for database.',
             tag: ['app-clone', 'firebase', 'react', 'styled-components'],
-            repo: 'https://github.com/Nicolaas0/chazyy',
+            repo: 'https://github.com/Nicolaas0/chazyy-demo',
             website: 'https://chazyy.netlify.app'
         }
     ];
