@@ -139,6 +139,15 @@ const Snt = () => {
         mx: '4',
     }
 
+    const noteStyle = {
+        fontFamily: 'RobotoMono',
+        fontSize: {
+            sm: '0.5rem',
+            xl: '1rem',
+        },
+        mt: '20px',
+    }
+
     return (
         <Box {...containerStyle}>
             <Text {...headingStyle}>my skills and tools:</Text>
@@ -157,6 +166,7 @@ const Snt = () => {
                     </UnorderedList>
                 ))
             }
+            <Text {...noteStyle}>*Hover to the badge for more info 👀</Text>
         </Box>
 
     )
